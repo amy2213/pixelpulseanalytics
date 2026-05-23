@@ -195,6 +195,7 @@ h2 {
   max-width: 860px;
 }
 .section-intro { max-width: 760px; margin-top: 16px; color: var(--ink-soft); font-size: 18px; }
+.section-intro a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
 
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
@@ -208,6 +209,7 @@ h2 {
 .card .label { color: var(--accent); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
 .card h3 { font-size: 25px; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 10px; }
 .card p { color: var(--ink-soft); font-size: 15.5px; }
+.card p + p { margin-top: 12px; }
 .card ul { margin: 16px 0 0 18px; color: var(--ink-soft); font-size: 15px; }
 .card li + li { margin-top: 7px; }
 .card .meta { margin-top: 18px; color: var(--ink-muted); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
@@ -271,6 +273,21 @@ h2 {
 .detail-list li { list-style: none; border-bottom: 1px solid var(--rule); padding-bottom: 12px; color: var(--ink-soft); }
 .detail-list strong { color: var(--ink); }
 
+.example-stack { display: grid; gap: 22px; }
+.example-card {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.example-side { padding: 26px; }
+.example-side.before { background: #f1eadb; border-right: 1px solid var(--rule); }
+.example-side.after { background: var(--paper); }
+.example-side h3 { font-size: 24px; margin-bottom: 12px; }
+.example-side ul { margin-left: 18px; color: var(--ink-soft); }
+.example-side li + li { margin-top: 8px; }
+.example-card .meta { padding: 0 26px 24px; grid-column: 1 / -1; }
+
 .notice {
   background: var(--paper-deep);
   border-left: 4px solid var(--accent);
@@ -299,7 +316,7 @@ footer a:hover { color: var(--accent); border-color: var(--accent); }
 .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
 
 @media (max-width: 900px) {
-  .hero-grid, .section-head, .grid-2, .grid-3, .offer-grid, .strip-grid, .steps { grid-template-columns: 1fr; }
+  .hero-grid, .section-head, .grid-2, .grid-3, .offer-grid, .strip-grid, .steps, .example-card { grid-template-columns: 1fr; }
   .topbar .container {
     align-items: flex-start;
     flex-wrap: wrap;
@@ -308,7 +325,8 @@ footer a:hover { color: var(--accent); border-color: var(--accent); }
   .hero { padding: 60px 0; }
   .status-card { border-left: 0; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 24px; }
   .section { padding: 58px 0; }
-  .offer, .card { padding: 22px; }
+  .offer, .card, .example-side { padding: 22px; }
+  .example-side.before { border-right: 0; border-bottom: 1px solid var(--rule); }
 }
 
 @media (max-width: 620px) {
