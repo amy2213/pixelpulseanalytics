@@ -31,7 +31,7 @@ h1, h2, h3, h4, .brand, .serif {
   font-optical-sizing: auto;
 }
 
-.mono, .eyebrow, .label, .price, nav a, .btn, .tag, .meta {
+.mono, .eyebrow, .label, .price, nav a, .btn, .tag, .meta, .copy-email {
   font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
 }
 
@@ -308,6 +308,16 @@ h2 {
 .contact-panel p + p { margin-top: 10px; }
 .contact-list { display: grid; gap: 14px; margin-top: 20px; }
 .contact-list a { color: var(--accent); overflow-wrap: anywhere; }
+.copy-email {
+  display: inline-block;
+  width: 100%;
+  background: var(--paper-deep);
+  border: 1px solid var(--rule);
+  padding: 12px 14px;
+  color: var(--ink);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
 
 footer { padding: 44px 0 58px; color: var(--ink-muted); font-size: 13px; }
 footer .container { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; border-top: 1px solid var(--rule); padding-top: 28px; }
