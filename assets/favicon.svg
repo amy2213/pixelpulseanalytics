@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pixel Pulse Analytics mark">
+  <rect width="64" height="64" rx="14" fill="#faf8f3"/>
+  <circle cx="18" cy="32" r="5" fill="#2f5d54"/>
+  <path d="M8 32h10l5-12 8 24 8-24 5 12h12" fill="none" stroke="#161616" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="46" cy="32" r="4" fill="#b67d2c"/>
+</svg>

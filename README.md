@@ -42,7 +42,10 @@ Supporting message:
 
 - `index.html` — redesigned homepage
 - `contact.html` — project intake and email readiness page
+- `examples.html` — before/after example scenarios
 - `assets/styles.css` — shared stylesheet
+- `assets/favicon.svg` — browser/favicon mark
+- `assets/og-preview.svg` — social preview image
 - `services/spreadsheet-cleanup.html` — Messy Data Cleanup landing page
 - `services/mini-dashboard.html` — Mini Dashboard landing page
 - `services/website-audit.html` — Website Clarity Audit landing page
@@ -52,6 +55,14 @@ Supporting message:
 - `404.html` — matching custom not-found page
 - `CNAME` — custom domain configuration
 - `robots.txt` and `sitemap.xml` — crawler and SEO basics
+
+## Brand assets
+
+The site includes:
+
+- SVG favicon at `/assets/favicon.svg`
+- SVG Open Graph/social preview at `/assets/og-preview.svg`
+- Homepage Open Graph and Twitter card metadata
 
 ## Contact readiness
 
@@ -82,7 +93,7 @@ The original editorial identity remains, but the redesign is more direct and ser
 
 - **Typography:** Fraunces for high-signal headings, Inter for readable body copy, JetBrains Mono for labels and prices.
 - **Palette:** warm paper, deep ink, muted teal, blue, gold, and rust accents.
-- **Layout:** strong hero, fixed-scope service cards, systems-studio positioning, proof of range, and clear intake process.
+- **Layout:** strong hero, fixed-scope service cards, systems-studio positioning, before/after examples, proof of range, and clear intake process.
 - **Tone:** sharp, practical, high-trust, and grounded. Not Fiverr. Not agency fog. Not AI hype sludge.
 - **Mobile:** simplified navigation, full-width CTAs, stacked cards, and readable service metadata on small screens.
 
@@ -94,18 +105,16 @@ The repo is configured for GitHub Pages with the custom domain:
 pixelpulseanalytics.com
 ```
 
-`robots.txt` points crawlers to the sitemap, and the sitemap includes the homepage, contact page, and all six service pages.
+`robots.txt` points crawlers to the sitemap, and the sitemap includes the homepage, contact page, examples page, and all six service pages.
 
 ## Next improvements
 
 Recommended next iterations:
 
-1. Add an Open Graph preview image.
-2. Add a favicon.
-3. Add `LocalBusiness` or `ProfessionalService` schema markup.
-4. Add a lightweight contact form only when email intake becomes annoying.
-5. Add anonymized before/after examples once real client work exists.
-6. Add testimonials only when they are real. Fake testimonials are trust poison with better formatting.
+1. Add `LocalBusiness` or `ProfessionalService` schema markup.
+2. Add a lightweight contact form only when email intake becomes annoying.
+3. Add real anonymized before/after examples once client work exists.
+4. Add testimonials only when they are real. Fake testimonials are trust poison with better formatting.
 
 ## Brand boundary
 
