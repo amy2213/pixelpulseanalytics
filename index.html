@@ -3,1048 +3,239 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pixel Pulse Analytics — Independent consulting by Amy Laird</title>
-<meta name="description" content="Independent consulting on AI implementation, process design, research, and data tooling. By Amy Laird." />
-
+<title>Pixel Pulse Analytics — Clarity systems for messy work</title>
+<meta name="description" content="Small fixed-scope services for spreadsheet cleanup, dashboards, website refreshes, AI workflows, SOPs, and financial tracking tools by Amy Laird." />
 <meta property="og:title" content="Pixel Pulse Analytics" />
-<meta property="og:description" content="Independent consulting on AI implementation, process design, research, and data tooling." />
+<meta property="og:description" content="Messy data, broken workflows, stale websites, and scattered information turned into clear systems you can use." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://pixelpulseanalytics.com" />
-
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-<style>
-:root {
-  --paper: #faf8f3;
-  --paper-warm: #f4f0e6;
-  --paper-deep: #ece6d4;
-  --ink: #1a1a1a;
-  --ink-soft: #4a4a4a;
-  --ink-muted: #888880;
-  --rule: #d8d2c2;
-  --accent: #2f5d54;
-  --accent-light: #5a8a80;
-  --accent-rust: #b67d2c;
-  --accent-plum: #6b6280;
-  --max-width: 1280px;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Fraunces', Georgia, serif;
-  font-optical-sizing: auto;
-  background: var(--paper);
-  color: var(--ink);
-  line-height: 1.55;
-  font-size: 17px;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-.mono {
-  font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
-  font-feature-settings: 'liga' 0;
-}
-
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
-/* ============ TOP NAV ============ */
-.topbar {
-  border-bottom: 1px solid var(--rule);
-  padding: 18px 0;
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  background: var(--paper);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(8px);
-}
-.topbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.brand-mark {
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: -0.01em;
-  text-decoration: none;
-  color: var(--ink);
-}
-.brand-mark .dot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
-  border-radius: 50%;
-  margin-right: 8px;
-  vertical-align: middle;
-}
-.topbar nav {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.topbar a {
-  color: var(--ink-soft);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-.topbar a:hover { color: var(--accent); }
-
-.topbar .cta-mini {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: var(--ink);
-  color: var(--paper) !important;
-  padding: 8px 14px;
-  transition: background 0.2s ease;
-}
-.topbar .cta-mini:hover { background: var(--accent); color: var(--paper) !important; }
-
-/* ============ HERO ============ */
-.hero {
-  padding: 80px 0 80px;
-  position: relative;
-}
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 60px;
-  align-items: end;
-}
-.eyebrow {
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 28px;
-  opacity: 0;
-  animation: fadeUp 0.7s ease forwards;
-  animation-delay: 0.1s;
-}
-.hero h1 {
-  font-family: 'Fraunces', serif;
-  font-weight: 350;
-  font-size: clamp(44px, 7.5vw, 104px);
-  line-height: 0.98;
-  letter-spacing: -0.035em;
-  margin-bottom: 32px;
-  font-variation-settings: "opsz" 144, "SOFT" 30;
-  opacity: 0;
-  animation: fadeUp 0.9s ease forwards;
-  animation-delay: 0.2s;
-}
-.hero h1 em {
-  font-style: italic;
-  font-weight: 350;
-  color: var(--accent);
-  font-variation-settings: "opsz" 144, "SOFT" 100;
-}
-.hero-sub {
-  font-size: 21px;
-  line-height: 1.5;
-  color: var(--ink-soft);
-  max-width: 680px;
-  margin-bottom: 40px;
-  font-weight: 400;
-  opacity: 0;
-  animation: fadeUp 0.9s ease forwards;
-  animation-delay: 0.4s;
-}
-.hero-sub strong {
-  color: var(--ink);
-  font-weight: 500;
-}
-.hero-ctas {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeUp 0.9s ease forwards;
-  animation-delay: 0.55s;
-}
-.btn-primary {
-  background: var(--ink);
-  color: var(--paper);
-  padding: 16px 28px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: background 0.25s ease, transform 0.25s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-}
-.btn-primary:hover {
-  background: var(--accent);
-  transform: translateY(-2px);
-}
-.btn-primary .arrow {
-  transition: transform 0.25s ease;
-}
-.btn-primary:hover .arrow { transform: translateX(4px); }
-.btn-secondary {
-  color: var(--ink);
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 3px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-.btn-secondary:hover { color: var(--accent); border-color: var(--accent); }
-
-.availability {
-  border-left: 1px solid var(--rule);
-  padding: 4px 0 4px 28px;
-  opacity: 0;
-  animation: fadeUp 0.9s ease forwards;
-  animation-delay: 0.65s;
-}
-.availability .label {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.availability .pulse {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  background: var(--accent);
-  border-radius: 50%;
-  animation: pulse 2.2s ease-in-out infinite;
-}
-.availability .status-text {
-  font-family: 'Fraunces', serif;
-  font-size: 18px;
-  line-height: 1.4;
-  color: var(--ink);
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-.availability .status-detail {
-  font-size: 14px;
-  color: var(--ink-soft);
-  line-height: 1.5;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.35; }
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ============ SECTION RULES ============ */
-.section {
-  padding: 88px 0;
-  border-top: 1px solid var(--rule);
-}
-.section.alt { background: var(--paper-warm); }
-.section-header {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 60px;
-  margin-bottom: 60px;
-  align-items: baseline;
-}
-.section-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--ink-muted);
-  letter-spacing: 0.1em;
-}
-.section-title {
-  font-family: 'Fraunces', serif;
-  font-weight: 400;
-  font-size: clamp(30px, 4.2vw, 48px);
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  font-variation-settings: "opsz" 96;
-}
-.section-title em {
-  font-style: italic;
-  color: var(--accent);
-  font-weight: 400;
-}
-.section-intro {
-  font-size: 18px;
-  color: var(--ink-soft);
-  max-width: 660px;
-  margin-top: 18px;
-  line-height: 1.55;
-}
-
-/* ============ CAPABILITIES ============ */
-.body-grid {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 60px;
-}
-.capabilities {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border-top: 1px solid var(--rule);
-  border-left: 1px solid var(--rule);
-}
-.capability {
-  padding: 32px;
-  border-right: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  background: var(--paper);
-  transition: background 0.25s ease;
-}
-.capability:hover { background: var(--paper-warm); }
-.capability-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-  margin-bottom: 14px;
-}
-.capability h3 {
-  font-family: 'Fraunces', serif;
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  margin-bottom: 14px;
-  line-height: 1.15;
-}
-.capability h3 em {
-  font-style: italic;
-  color: var(--accent);
-  font-weight: 400;
-}
-.capability p {
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--ink-soft);
-  margin-bottom: 14px;
-}
-.capability .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 18px;
-}
-.capability .tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  color: var(--ink-muted);
-  text-transform: uppercase;
-  border: 1px solid var(--rule);
-  padding: 4px 8px;
-}
-
-/* ============ SERVICES / TIERS ============ */
-.tiers {
-  display: grid;
-  gap: 0;
-  border-top: 1px solid var(--rule);
-}
-.tier {
-  display: grid;
-  grid-template-columns: 80px 1fr 240px 200px;
-  gap: 32px;
-  padding: 36px 0;
-  border-bottom: 1px solid var(--rule);
-  align-items: center;
-  transition: background 0.25s ease;
-}
-.tier:hover { background: var(--paper-warm); padding-left: 12px; padding-right: 12px; margin-left: -12px; margin-right: -12px; }
-.tier-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--ink-muted);
-  letter-spacing: 0.1em;
-}
-.tier-main h3 {
-  font-family: 'Fraunces', serif;
-  font-size: 26px;
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  margin-bottom: 8px;
-}
-.tier-main h3 em {
-  font-style: italic;
-  color: var(--accent);
-  font-weight: 400;
-}
-.tier-main p {
-  font-size: 15px;
-  color: var(--ink-soft);
-  line-height: 1.55;
-  max-width: 520px;
-}
-.tier-meta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  color: var(--ink-soft);
-  line-height: 1.6;
-}
-.tier-meta .price {
-  display: block;
-  font-family: 'Fraunces', serif;
-  font-size: 24px;
-  font-weight: 500;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-  margin-bottom: 4px;
-}
-.tier-meta .price em {
-  font-family: 'JetBrains Mono', monospace;
-  font-style: normal;
-  font-size: 11px;
-  color: var(--ink-muted);
-  letter-spacing: 0.06em;
-  margin-left: 4px;
-  font-weight: 400;
-}
-.tier-meta .timeline {
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
-.tier-cta {
-  text-align: right;
-}
-.tier-cta a {
-  color: var(--ink);
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 3px;
-  text-decoration: none;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: color 0.2s ease, border-color 0.2s ease;
-  white-space: nowrap;
-}
-.tier-cta a:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-}
-.tier-cta a .arrow {
-  display: inline-block;
-  margin-left: 4px;
-  transition: transform 0.25s ease;
-}
-.tier-cta a:hover .arrow { transform: translateX(4px); }
-
-.tiers-note {
-  margin-top: 36px;
-  padding: 24px 28px;
-  background: var(--paper-deep);
-  border-left: 3px solid var(--accent);
-  font-size: 15px;
-  color: var(--ink-soft);
-  line-height: 1.6;
-  max-width: 720px;
-}
-.tiers-note strong {
-  color: var(--ink);
-  font-weight: 500;
-}
-
-/* ============ PROCESS ============ */
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-.process-step .step-num {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 48px;
-  font-weight: 300;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 18px;
-  font-variation-settings: "opsz" 144, "SOFT" 100;
-}
-.process-step h4 {
-  font-family: 'Fraunces', serif;
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  letter-spacing: -0.01em;
-}
-.process-step p {
-  font-size: 15px;
-  color: var(--ink-soft);
-  line-height: 1.55;
-}
-
-/* ============ WORK / PROOF ============ */
-.work-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-}
-.work-card {
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  padding: 28px;
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-.work-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent);
-}
-.work-card .kind {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-.work-card h4 {
-  font-family: 'Fraunces', serif;
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
-.work-card h4 em { font-style: italic; font-weight: 400; }
-.work-card p {
-  font-size: 15px;
-  color: var(--ink-soft);
-  line-height: 1.5;
-  margin-bottom: 16px;
-}
-.work-card .meta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--ink-muted);
-  letter-spacing: 0.05em;
-}
-
-/* ============ FAQ ============ */
-.faq-list {
-  display: grid;
-  gap: 0;
-}
-.faq-item {
-  border-top: 1px solid var(--rule);
-  padding: 28px 0;
-}
-.faq-item:last-child { border-bottom: 1px solid var(--rule); }
-.faq-q {
-  font-family: 'Fraunces', serif;
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  margin-bottom: 12px;
-  color: var(--ink);
-}
-.faq-q em { font-style: italic; color: var(--accent); font-weight: 400; }
-.faq-a {
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--ink-soft);
-  max-width: 760px;
-}
-
-/* ============ CONTACT / CLOSE ============ */
-.close-block {
-  text-align: left;
-  padding: 100px 0;
-  border-top: 1px solid var(--rule);
-  background: var(--paper-warm);
-}
-.close-block h2 {
-  font-family: 'Fraunces', serif;
-  font-weight: 350;
-  font-size: clamp(36px, 5.5vw, 68px);
-  letter-spacing: -0.025em;
-  line-height: 1.05;
-  margin-bottom: 24px;
-  max-width: 900px;
-}
-.close-block h2 em {
-  font-style: italic;
-  color: var(--accent);
-  font-weight: 350;
-}
-.close-block .close-sub {
-  font-size: 19px;
-  color: var(--ink-soft);
-  line-height: 1.5;
-  max-width: 620px;
-  margin-bottom: 36px;
-}
-.close-block .close-ctas {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-/* ============ FOOTER ============ */
-footer {
-  padding: 48px 0 64px;
-  border-top: 1px solid var(--rule);
-  font-size: 13px;
-  color: var(--ink-muted);
-}
-footer .container {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-footer .colophon {
-  max-width: 520px;
-  line-height: 1.6;
-}
-footer a {
-  color: var(--ink-soft);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-footer .links { display: flex; gap: 20px; }
-
-/* ============ RESPONSIVE ============ */
-@media (max-width: 880px) {
-  .container { padding: 0 22px; }
-  .hero { padding: 50px 0 60px; }
-  .hero-grid, .section-header, .body-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .availability {
-    border-left: none;
-    border-top: 1px solid var(--rule);
-    padding-left: 0;
-    padding-top: 28px;
-  }
-  .section { padding: 60px 0; }
-  .section-header { margin-bottom: 36px; }
-  .capabilities { grid-template-columns: 1fr; }
-  .tier {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 28px 0;
-  }
-  .tier-cta { text-align: left; }
-  .tier:hover {
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .process-steps {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .work-grid { grid-template-columns: 1fr; gap: 20px; }
-  .topbar nav { gap: 14px; font-size: 12px; }
-  .topbar .container { gap: 16px; }
-  .topbar .cta-mini { padding: 6px 10px; font-size: 11px; }
-  .close-block { padding: 70px 0; }
-  .hero-ctas { gap: 14px; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body>
-
-<!-- ============ TOP BAR ============ -->
-<div class="topbar">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="topbar">
   <div class="container">
-    <a href="#top" class="brand-mark"><span class="dot"></span>PIXEL&nbsp;PULSE&nbsp;ANALYTICS</a>
-    <nav>
-      <a href="#capabilities">Capabilities</a>
-      <a href="#work-with-me">Work with me</a>
-      <a href="#process">Process</a>
-      <a href="#proof">Selected work</a>
-      <a href="#contact" class="cta-mini">Book a call</a>
+    <a class="brand" href="/">Pixel Pulse Analytics</a>
+    <nav aria-label="Main navigation">
+      <a href="#services">Quick fixes</a>
+      <a href="#systems">Systems studio</a>
+      <a href="#proof">Proof</a>
+      <a href="#process">How it works</a>
+      <a class="nav-cta" href="#contact">Start a project</a>
     </nav>
   </div>
-</div>
+</header>
 
-<!-- ============ HERO ============ -->
-<section class="hero" id="top">
-  <div class="container">
-    <div class="hero-grid">
+<main id="main">
+  <section class="hero">
+    <div class="container hero-grid">
       <div>
-        <div class="eyebrow mono">Independent consulting practice</div>
-        <h1>
-          Practical AI<br />
-          for teams that <em>do</em><br />
-          real work.
-        </h1>
-        <p class="hero-sub">
-          I help small teams cut through the AI noise — figuring out what to automate, what to leave alone, and what to build. Plus the process, data, and research work that often turns out to be the real bottleneck. <strong>Independent practitioner, by Amy Laird.</strong>
-        </p>
-        <div class="hero-ctas">
-          <a href="#contact" class="btn-primary">Book a strategy call <span class="arrow">→</span></a>
-          <a href="#work-with-me" class="btn-secondary">See how I work</a>
+        <div class="eyebrow">Systems studio for small teams</div>
+        <h1>Messy data. Clear decisions. Useful systems.</h1>
+        <p class="hero-copy">I help small businesses, solo operators, nonprofits, and busy teams clean up the files, workflows, websites, and trackers they rely on but no longer trust. <strong>Small fixed-scope projects. Serious systems thinking.</strong></p>
+        <div class="cta-row">
+          <a class="btn primary" href="mailto:hello@pixelpulseanalytics.com?subject=Project%20inquiry">Send me the mess →</a>
+          <a class="btn secondary" href="#services">View quick fixes</a>
         </div>
       </div>
-      <aside class="availability">
-        <div class="label mono"><span class="pulse"></span>CURRENT STATUS</div>
-        <div class="status-text">Accepting 2 new clients this quarter.</div>
-        <div class="status-detail">I work with a small number of clients at a time so each engagement gets real attention. Strategy calls usually book within a week.</div>
+      <aside class="status-card" aria-label="Current availability">
+        <div class="label">Current availability</div>
+        <h2>Taking small fixed-scope projects this month.</h2>
+        <p>Best-fit projects are practical, bounded, and useful within days or weeks: dashboards, trackers, SOPs, website clarity, AI workflows, and operational cleanup.</p>
       </aside>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ CAPABILITIES ============ -->
-<section class="section" id="capabilities">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <div class="section-num mono">01 — CAPABILITIES</div>
-      </div>
-      <div>
-        <h2 class="section-title">What I actually <em>do.</em></h2>
-        <p class="section-intro">Four overlapping disciplines. Most engagements draw on two or three at once — that's usually where the real value lives, in the seams between them.</p>
-      </div>
-    </div>
-    <div class="body-grid">
-      <div></div>
-      <div>
-        <div class="capabilities">
-
-          <div class="capability">
-            <div class="capability-num mono">A.</div>
-            <h3>AI &amp; <em>Claude</em> implementation</h3>
-            <p>Helping small teams move from "we should use AI" to specific working systems. Prompt design, workflow automation, custom tooling, and training that sticks.</p>
-            <div class="tags">
-              <span class="tag mono">Claude</span>
-              <span class="tag mono">prompt design</span>
-              <span class="tag mono">workflow automation</span>
-              <span class="tag mono">team training</span>
-            </div>
-          </div>
-
-          <div class="capability">
-            <div class="capability-num mono">B.</div>
-            <h3>Process &amp; <em>SOP</em> design</h3>
-            <p>Turning the things that live in someone's head into documented, repeatable processes — so the team scales without the founder being the bottleneck. This is what ProcessPilot does; consulting is the human version.</p>
-            <div class="tags">
-              <span class="tag mono">SOPs</span>
-              <span class="tag mono">workflow mapping</span>
-              <span class="tag mono">handoff design</span>
-              <span class="tag mono">documentation</span>
-            </div>
-          </div>
-
-          <div class="capability">
-            <div class="capability-num mono">C.</div>
-            <h3>Research &amp; <em>analysis</em></h3>
-            <p>Rigorous independent investigation on hard questions. Literature reviews, methodology design, pattern analysis, and the kind of structured thinking that turns "we don't know" into "here's what we found."</p>
-            <div class="tags">
-              <span class="tag mono">methodology</span>
-              <span class="tag mono">literature review</span>
-              <span class="tag mono">pattern analysis</span>
-              <span class="tag mono">written deliverables</span>
-            </div>
-          </div>
-
-          <div class="capability">
-            <div class="capability-num mono">D.</div>
-            <h3>Data tooling &amp; <em>extraction</em></h3>
-            <p>Custom utilities for getting data out of messy sources — public records, scraped APIs, PDFs, geographic boundaries. Most useful for nonprofits, researchers, and small teams without dedicated data engineering.</p>
-            <div class="tags">
-              <span class="tag mono">Python</span>
-              <span class="tag mono">civic data</span>
-              <span class="tag mono">geospatial</span>
-              <span class="tag mono">scraping</span>
-            </div>
-          </div>
-
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-num mono">01 — Start small</div>
+        <div>
+          <h2>Fixed-scope services that solve one real problem at a time.</h2>
+          <p class="section-intro">These are not low-level tasks. They are practical entry points into larger systems work. You bring the messy file, unclear process, stale page, or half-built idea. I turn it into something usable.</p>
         </div>
+      </div>
+      <div class="offer-grid">
+        <article class="offer">
+          <h3>Messy Data Cleanup</h3>
+          <p>Clean, restructure, deduplicate, and organize spreadsheets, CSV exports, contact lists, trackers, or reporting files.</p>
+          <div class="price">Starting at $250 · 48–72 hrs</div>
+          <a href="/services/spreadsheet-cleanup.html">View service</a>
+        </article>
+        <article class="offer">
+          <h3>Mini Dashboard</h3>
+          <p>A simple dashboard for sales, expenses, leads, grants, programs, listings, projects, or recurring reporting.</p>
+          <div class="price">Starting at $500 · 3–5 days</div>
+          <a href="/services/mini-dashboard.html">View service</a>
+        </article>
+        <article class="offer">
+          <h3>Website Clarity Audit</h3>
+          <p>A direct teardown of your homepage, offer, structure, CTA, and trust signals with a prioritized fix list.</p>
+          <div class="price">$250 · 48 hrs</div>
+          <a href="/services/website-audit.html">View service</a>
+        </article>
+        <article class="offer">
+          <h3>One-Page Website Refresh</h3>
+          <p>Rewrite and restructure a simple service website so it explains what you do and how people can hire you.</p>
+          <div class="price">Starting at $900 · 7–10 days</div>
+          <a href="/services/one-page-website.html">View service</a>
+        </article>
+        <article class="offer">
+          <h3>AI Workflow Operating Kit</h3>
+          <p>Custom AI prompts, usage rules, workflow map, and repeatable process for one real business task.</p>
+          <div class="price">Starting at $500 · 3–5 days</div>
+          <a href="/services/ai-workflow-kit.html">View service</a>
+        </article>
+        <article class="offer">
+          <h3>SOP From Chaos</h3>
+          <p>Turn screenshots, rough notes, calls, or tribal knowledge into a clean standard operating procedure.</p>
+          <div class="price">Starting at $350 · 3 days</div>
+          <a href="/services/sop-from-chaos.html">View service</a>
+        </article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ TIERS / WORK WITH ME ============ -->
-<section class="section alt" id="work-with-me">
-  <div class="container">
-    <div class="section-header">
+  <section class="strip" id="systems">
+    <div class="container strip-grid">
       <div>
-        <div class="section-num mono">02 — WORK WITH ME</div>
+        <h3>Data clarity</h3>
+        <p>Spreadsheets, dashboards, exports, trackers, and reports that stop being mysterious little traps.</p>
       </div>
       <div>
-        <h2 class="section-title">Four ways to <em>start.</em></h2>
-        <p class="section-intro">Each tier applies across any of the four capabilities. We figure out which capability you need on the strategy call — most clients start there.</p>
-      </div>
-    </div>
-
-    <div class="tiers">
-
-      <div class="tier">
-        <div class="tier-num mono">T.1</div>
-        <div class="tier-main">
-          <h3>Strategy <em>call</em></h3>
-          <p>One focused 90-minute working session. You walk in confused, walk out with a written action plan and a prioritized list of next moves. Recording and summary delivered within 24 hours. Most clients start here.</p>
-        </div>
-        <div class="tier-meta">
-          <span class="price">$350 <em>USD</em></span>
-          <span class="timeline">90 min · Booked within 1 wk</span>
-        </div>
-        <div class="tier-cta">
-          <a href="#contact">Book a call <span class="arrow">→</span></a>
-        </div>
-      </div>
-
-      <div class="tier">
-        <div class="tier-num mono">T.2</div>
-        <div class="tier-main">
-          <h3>Readiness <em>audit</em></h3>
-          <p>Two-week productized engagement. I map your current workflows, identify the 5–10 highest-leverage opportunities (AI, process, data, or research), and deliver a ranked implementation roadmap. For teams that want clarity before committing to a build.</p>
-        </div>
-        <div class="tier-meta">
-          <span class="price">$2,500 <em>USD</em></span>
-          <span class="timeline">2 weeks · Fixed scope</span>
-        </div>
-        <div class="tier-cta">
-          <a href="#contact">Inquire <span class="arrow">→</span></a>
-        </div>
-      </div>
-
-      <div class="tier">
-        <div class="tier-num mono">T.3</div>
-        <div class="tier-main">
-          <h3>Implementation <em>sprint</em></h3>
-          <p>Four-week hands-on engagement. We pick one workflow, system, or research question — I build it, train your team, document everything, and hand it off ready to run. Includes prompts, SOPs, custom tooling, and a written close-out memo.</p>
-        </div>
-        <div class="tier-meta">
-          <span class="price">$7,500 <em>USD</em></span>
-          <span class="timeline">4 weeks · Defined deliverable</span>
-        </div>
-        <div class="tier-cta">
-          <a href="#contact">Inquire <span class="arrow">→</span></a>
-        </div>
-      </div>
-
-      <div class="tier">
-        <div class="tier-num mono">T.4</div>
-        <div class="tier-main">
-          <h3>Fractional <em>advisor</em></h3>
-          <p>Monthly retainer for teams that want ongoing partnership. Two working sessions per month plus async Slack/email. Best for clients who've already done a Sprint or Audit and want continuity as their needs evolve.</p>
-        </div>
-        <div class="tier-meta">
-          <span class="price">$2,000 <em>/mo</em></span>
-          <span class="timeline">3-month minimum · Async + sync</span>
-        </div>
-        <div class="tier-cta">
-          <a href="#contact">Inquire <span class="arrow">→</span></a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="tiers-note">
-      <strong>Not sure which tier fits?</strong> Almost everyone starts with the Strategy Call. We use the 90 minutes to figure out whether you actually need an Audit, a Sprint, or just a few more focused sessions. The call fee credits toward any larger engagement booked within 30 days.
-    </div>
-
-  </div>
-</section>
-
-<!-- ============ PROCESS ============ -->
-<section class="section" id="process">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <div class="section-num mono">03 — PROCESS</div>
+        <h3>Workflow structure</h3>
+        <p>SOPs, handoffs, decision trees, AI workflows, and process maps that make work repeatable.</p>
       </div>
       <div>
-        <h2 class="section-title">How an engagement <em>actually</em> runs.</h2>
-        <p class="section-intro">No surprises, no hidden scope. The shape stays the same whether it's an Audit, a Sprint, or a retainer month.</p>
+        <h3>Digital presence</h3>
+        <p>Websites and landing pages that explain the offer, reduce confusion, and create a path to action.</p>
       </div>
     </div>
-    <div class="body-grid">
-      <div></div>
-      <div class="process-steps">
+  </section>
 
-        <div class="process-step">
-          <div class="step-num">i.</div>
-          <h4>Listen first</h4>
-          <p>Every engagement starts with understanding what you're actually doing — not what you think you should be doing. I ask uncomfortable questions about the workflow before I propose anything.</p>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-num mono">02 — Bigger work</div>
+        <div>
+          <h2>The small project is the front door. The real work is clarity systems.</h2>
+          <p class="section-intro">If the first fix reveals a deeper operational mess, I can help with larger audits, implementation sprints, documentation systems, and data/process rebuilds.</p>
         </div>
-
-        <div class="process-step">
-          <div class="step-num">ii.</div>
-          <h4>Smallest useful thing</h4>
-          <p>I'll always propose the smallest version of the work that's still genuinely useful. Bigger engagements come from earned trust, not from talking you into them upfront.</p>
-        </div>
-
-        <div class="process-step">
-          <div class="step-num">iii.</div>
-          <h4>Document everything</h4>
-          <p>Every engagement ends with written deliverables you keep — SOPs, prompts, scripts, memos, decision logs. If I disappear tomorrow, your team should still be able to run what we built.</p>
-        </div>
-
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="label">Audit</div>
+          <h3>Operations Intelligence Audit</h3>
+          <p>Map the broken logic across files, workflows, roles, tools, and decisions. Deliver a ranked fix plan.</p>
+          <div class="meta">Starting at $2,500</div>
+        </article>
+        <article class="card">
+          <div class="label">Sprint</div>
+          <h3>System Buildout Sprint</h3>
+          <p>Build one defined system: dashboard, workflow, documentation library, AI process, or data tool.</p>
+          <div class="meta">Starting at $7,500</div>
+        </article>
+        <article class="card">
+          <div class="label">Advisor</div>
+          <h3>Fractional Systems Partner</h3>
+          <p>Ongoing support for teams that need recurring cleanup, analysis, workflow design, and implementation guidance.</p>
+          <div class="meta">Starting at $2,000/mo</div>
+        </article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ SELECTED WORK ============ -->
-<section class="section alt" id="proof">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <div class="section-num mono">04 — SELECTED WORK</div>
+  <section class="section" id="proof">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-num mono">03 — Proof of range</div>
+        <div>
+          <h2>Independent work that shows the operating pattern.</h2>
+          <p class="section-intro">The projects are different on the surface. Underneath, the same skill keeps showing up: turn ambiguous, messy information into structured tools, evidence, workflows, or decisions.</p>
+        </div>
       </div>
-      <div>
-        <h2 class="section-title">Things I've actually <em>built.</em></h2>
-        <p class="section-intro">Independent projects across the four capabilities. Most are open source. They exist because I built them, not because a client paid me to — which is why they're a stronger signal than typical case studies.</p>
-      </div>
-    </div>
-    <div class="body-grid">
-      <div></div>
-      <div class="work-grid">
-
-        <a href="#" class="work-card">
-          <div class="kind mono">AI Implementation · In Development</div>
-          <h4>ProcessPilot</h4>
-          <p>A Chrome extension that captures browser workflows and turns them into structured SOPs. The product version of what I do for clients — automating the "explaining the same process for the fourth time" problem.</p>
-          <div class="meta mono">v7 · QA in progress</div>
+      <div class="grid-2">
+        <a class="card card-link" href="https://github.com/amy2213/Voynich-Transition-Grammar" target="_blank" rel="noopener">
+          <div class="label">Research systems</div>
+          <h3>Voynich Transition Grammar</h3>
+          <p>Quantitative manuscript analysis showing how I handle ambiguous evidence, methodology, reproducibility, and bounded claims.</p>
+          <div class="meta">What it proves: research architecture</div>
         </a>
-
-        <a href="https://github.com/amy2213/Voynich-Transition-Grammar" target="_blank" rel="noopener" class="work-card">
-          <div class="kind mono">Research · Toward arXiv</div>
-          <h4>Voynich-Transition-Grammar</h4>
-          <p>Quantitative transition-grammar analysis of the Voynich Manuscript. Identifies distributed sequential rules, a structural constant across visual registers, and a bidirectional self-clustering signature. The kind of methodology I bring to client research.</p>
-          <div class="meta mono">github.com/amy2213 · 52-row dataset</div>
+        <a class="card card-link" href="https://github.com/amy2213/cacfp-texas-capstone" target="_blank" rel="noopener">
+          <div class="label">Civic data tooling</div>
+          <h3>Texas CACFP &amp; SFSP Tooling</h3>
+          <p>Open data workflows for Texas nutrition program analysis, built for practical use by analysts, administrators, and nonprofits.</p>
+          <div class="meta">What it proves: public data into tools</div>
         </a>
-
-        <a href="https://github.com/amy2213/cacfp-texas-capstone" target="_blank" rel="noopener" class="work-card">
-          <div class="kind mono">Data Tooling · Public</div>
-          <h4>Texas CACFP &amp; SFSP tooling</h4>
-          <p>Open data pipelines for Texas child &amp; adult nutrition programs — CACFP, SFSP, plus a campus boundary extractor. Built to make program data more usable for analysts, administrators, and nonprofits.</p>
-          <div class="meta mono">Python · github.com/amy2213</div>
+        <a class="card card-link" href="https://github.com/amy2213/MaskCoreCost" target="_blank" rel="noopener">
+          <div class="label">Applied self-assessment</div>
+          <h3>MaskCoreCost</h3>
+          <p>A research-informed reflection tool that turns complex human patterns into accessible structure and self-guided interpretation.</p>
+          <div class="meta">What it proves: complex pattern design</div>
         </a>
-
-        <a href="https://github.com/amy2213/MaskCoreCost" target="_blank" rel="noopener" class="work-card">
-          <div class="kind mono">Applied Research · Open Source</div>
-          <h4>MaskCoreCost</h4>
-          <p>A pattern-based adult self-reflection tool exploring autism-leaning, ADHD-leaning, and mixed presentations — including the masked patterns existing instruments miss. Free, gender-aware, research-informed.</p>
-          <div class="meta mono">JavaScript · github.com/amy2213</div>
-        </a>
-
+        <article class="card">
+          <div class="label">Workflow capture</div>
+          <h3>ProcessPilot</h3>
+          <p>A developing Chrome extension concept for turning browser workflows into structured SOPs. The product version of repeatable process design.</p>
+          <div class="meta">What it proves: process into documentation</div>
+        </article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ FAQ ============ -->
-<section class="section" id="faq">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <div class="section-num mono">05 — FAQ</div>
+  <section class="section alt" id="process">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-num mono">04 — How it works</div>
+        <div>
+          <h2>Simple intake. Clear scope. Useful handoff.</h2>
+        </div>
       </div>
-      <div>
-        <h2 class="section-title">Honest <em>answers.</em></h2>
-      </div>
-    </div>
-    <div class="body-grid">
-      <div></div>
-      <div class="faq-list">
-
-        <div class="faq-item">
-          <div class="faq-q">Why hire <em>you</em> and not a bigger agency?</div>
-          <div class="faq-a">Because you'll work directly with me from the first message to the final deliverable — no account managers, no junior associates, no handoffs. For small teams, that's worth more than the agency overhead you're paying for elsewhere. If your project needs an army, I'm happy to refer you somewhere appropriate.</div>
+      <div class="steps">
+        <div class="step">
+          <h3>Send the mess</h3>
+          <p>Email the file, website, process notes, or problem summary. Rough is fine. That is rather the point.</p>
         </div>
-
-        <div class="faq-item">
-          <div class="faq-q">Do you work with <em>nonprofits</em> or smaller budgets?</div>
-          <div class="faq-a">Yes — about a third of my engagements are nonprofit or public-interest work, often in the data tooling space. I keep some capacity for reduced-rate or pro-bono work each quarter. The civic data work in my portfolio is part of why.</div>
+        <div class="step">
+          <h3>I scope it</h3>
+          <p>I confirm whether it fits a quick fix, needs a larger build, or should not be touched with a ten-foot compliance pole.</p>
         </div>
-
-        <div class="faq-item">
-          <div class="faq-q">What if my problem doesn't fit one of these <em>tiers</em>?</div>
-          <div class="faq-a">Book the Strategy Call. The tiers are starting points, not boxes. Most actual engagements end up being some modified version of an Audit, a Sprint, or a retainer with a different shape. We figure that out together on the call.</div>
+        <div class="step">
+          <h3>You approve</h3>
+          <p>You get a clear price, turnaround, and deliverable before work starts. Revolutionary, apparently.</p>
         </div>
-
-        <div class="faq-item">
-          <div class="faq-q">Are you available for <em>longer-term</em> work?</div>
-          <div class="faq-a">The fractional advisor tier exists for exactly this. Most longer-term engagements grow out of a successful Sprint — once we've shipped one real thing together, ongoing work is the natural next step.</div>
+        <div class="step">
+          <h3>You get the system</h3>
+          <p>Final delivery includes the cleaned file, page, dashboard, SOP, report, or workflow plus notes so you can actually use it.</p>
         </div>
-
-        <div class="faq-item">
-          <div class="faq-q">What tools do you use?</div>
-          <div class="faq-a">Claude as my primary AI partner, plus the obvious ecosystem (ChatGPT, Gemini, Cursor when relevant). For code: Python, JavaScript, whatever the job needs. For documentation: whatever you already use. I don't push tooling religion on clients.</div>
-        </div>
-
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ CLOSE / CONTACT ============ -->
-<section class="close-block" id="contact">
-  <div class="container">
-    <h2>
-      Have a problem that feels <em>messy</em>?<br />
-      That's usually a good sign.
-    </h2>
-    <p class="close-sub">
-      Send a few sentences about what you're working on and what you've tried. I read everything that comes in. If we're a fit, I'll send back a calendar link within 48 hours.
-    </p>
-    <div class="close-ctas">
-      <a href="mailto:hello@pixelpulseanalytics.com?subject=Consulting%20inquiry" class="btn-primary">hello@pixelpulseanalytics.com <span class="arrow">→</span></a>
-      <a href="https://www.linkedin.com/in/amy-laird" target="_blank" rel="noopener" class="btn-secondary">LinkedIn</a>
+  <section class="close" id="contact">
+    <div class="container">
+      <h2>Have a messy file, process, website, or workflow that needs to become usable?</h2>
+      <p>Send a few sentences about what you have, what is broken, and what you need it to do. Attach the file or link if you can. I will tell you whether it fits a quick fix or needs a bigger scope.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="mailto:hello@pixelpulseanalytics.com?subject=Project%20inquiry">hello@pixelpulseanalytics.com →</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/amy-laird" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<!-- ============ FOOTER ============ -->
 <footer>
   <div class="container">
-    <div class="colophon">
-      Pixel Pulse Analytics is the working name of Amy Laird's independent consulting practice. Not affiliated with any other entity using a similar name.
-    </div>
-    <div class="links">
+    <p>Pixel Pulse Analytics is the independent systems studio of Amy Laird.</p>
+    <div class="footer-links">
       <a href="https://github.com/amy2213" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/amy-laird" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:hello@pixelpulseanalytics.com">Email</a>
     </div>
   </div>
 </footer>
-
 </body>
 </html>
