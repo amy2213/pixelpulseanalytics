@@ -41,6 +41,7 @@ Supporting message:
 ## File inventory
 
 - `index.html` — redesigned homepage
+- `contact.html` — project intake and email readiness page
 - `assets/styles.css` — shared stylesheet
 - `services/spreadsheet-cleanup.html` — Messy Data Cleanup landing page
 - `services/mini-dashboard.html` — Mini Dashboard landing page
@@ -51,6 +52,21 @@ Supporting message:
 - `404.html` — matching custom not-found page
 - `CNAME` — custom domain configuration
 - `robots.txt` and `sitemap.xml` — crawler and SEO basics
+
+## Contact readiness
+
+Primary inquiry address:
+
+```txt
+hello@pixelpulseanalytics.com
+```
+
+Before promoting the site, confirm:
+
+1. Porkbun forwards `hello@pixelpulseanalytics.com` to the real inbox.
+2. A test email from an outside account lands correctly.
+3. A backup contact path is available through LinkedIn.
+4. Optional later: configure a send-as alias so replies can come from the domain address.
 
 ## Tech stack
 
@@ -68,6 +84,7 @@ The original editorial identity remains, but the redesign is more direct and ser
 - **Palette:** warm paper, deep ink, muted teal, blue, gold, and rust accents.
 - **Layout:** strong hero, fixed-scope service cards, systems-studio positioning, proof of range, and clear intake process.
 - **Tone:** sharp, practical, high-trust, and grounded. Not Fiverr. Not agency fog. Not AI hype sludge.
+- **Mobile:** simplified navigation, full-width CTAs, stacked cards, and readable service metadata on small screens.
 
 ## Deployment
 
@@ -77,7 +94,7 @@ The repo is configured for GitHub Pages with the custom domain:
 pixelpulseanalytics.com
 ```
 
-`robots.txt` points crawlers to the sitemap, and the sitemap includes the homepage plus all six service pages.
+`robots.txt` points crawlers to the sitemap, and the sitemap includes the homepage, contact page, and all six service pages.
 
 ## Next improvements
 
